@@ -37,10 +37,11 @@ print getPGA(url)
 '''
 
 
-
+vs30File = list(open('vs30_calssified.txt', 'r'))
 parsFile = open('lonlat.txt', 'r')
 for index, lonlat in enumerate(parsFile):
-    url="https://earthquake.usgs.gov/nshmp-haz-ws/hazard/E2014/COUS/"+lonlat+"/PGA/760"
+    url="https://earthquake.usgs.gov/nshmp-haz-ws/hazard/E2014/COUS/"+lonlat+"/PGA/"+vs30File[index]
+    print url
     PGA = getPGA(url)
     print PGA
 
